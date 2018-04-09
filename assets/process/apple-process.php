@@ -21,7 +21,7 @@ if ($connect->connect_error) {
     foreach( $data as $row ){
         echo '<div class="col-md-4 text-center col-md-6 col-xs-6">';
             echo '<div class="thumbnail product-box">';
-                    echo '<img src="assets/img/0007778_iphone-7-plus.jpeg" width=30% height=50% alt=""/>';
+                    echo '<img src="'.$row["img"].'">';
                     echo '<div class="caption">';
                         echo '<h3><a href="#">'.$row["proName"].'</a></h3>';
                         echo '<p>Price: <strong> $'.$row["price"].'</strong></p>';

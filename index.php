@@ -12,7 +12,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <!-- custom CSS here -->
     <link href="assets/css/style.css" rel="stylesheet">
-    <title>Document</title>
+    <title>G13 Shopping Website</title>
 </head>
 <body>
 <!--Nav bar-->
@@ -36,12 +36,16 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li id="SignUp">
-            <a data-toggle="modal" href="#mySignUp">
+            <a data-toggle="modal" href="#myLogin">
             <span class="glyphicon glyphicon-user"></span>
-             Sign Up
+             Login
             </a>
         </li>
-
+        <li><a data-toggle="modal" href="#mySignUp">
+            <span class="glyphicon glyphicon-log-in"></span> SignUp
+            </a>
+        </li>
+        </ul>
         <!--Modal Sign Up-->
         <div class="modal fade" id="mySignUp" role="dialog">
             <div class="modal-dialog">
@@ -53,7 +57,7 @@
                     </div>
                     <div class="modal-body">
                        <!--Modal body-->
-                       <form method="POST" action="login-process.php">
+                       <form method="POST" action="sinup-process.php">
                            <div class="modal-group">
                                 <label for="firstname" class="col-form-label">First Name: </label>
                                 <input class="form-control" type="text" name="firstname" id="fistname" placeholder="First name">
@@ -172,16 +176,7 @@
             </div>
             <div class="row">
                     <!--Here display mobile info-->
-                    <div class="col-md-4 text-center col-md-6 col-xs-6">
-                        <div class="thumbnail product-box">
-                            <p>Here is something about each mobile<p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center col-md-6 col-xs-6">
-                            <div class="thumbnail product-box">
-                                <p>Here is something about each mobile<p>
-                            </div>
-                    </div>
+                    <?php include 'assets/process/apple-process.php'?>
             </div>
             <div>
                     <ol class="breadcrumb">
@@ -191,7 +186,7 @@
                 </div>
                 <div class="row" id ="product">
                         <!--Here display mobile info receive from PHP server-->
-                        <?php include 'assets/process/loadproduct.php'?>
+                       
                 </div>
         </div>
     </div>
