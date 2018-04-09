@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `bill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `bill` (
-  `billId` int(10) NOT NULL,
+  `billId` int(10) NOT NULL AUTO_INCREMENT,
   `proId` int(10) NOT NULL,
   `userId` int(10) NOT NULL,
   `quantity` int(10) DEFAULT NULL,
@@ -82,7 +82,7 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
-  `proId` int(10) NOT NULL,
+  `proId` int(10) NOT NULL AUTO_INCREMENT,
   `proName` varchar(50) DEFAULT NULL,
   `supplier` varchar(50) DEFAULT NULL,
   `srcSolution` varchar(30) DEFAULT NULL,
@@ -110,7 +110,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `userId` int(10) NOT NULL,
+  `userId` int(10) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(30) DEFAULT NULL,
   `lastName` varchar(30) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
