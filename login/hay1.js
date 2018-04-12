@@ -1,6 +1,4 @@
 function xuli(e){
-	document.getElementById('username_error').innerHTML="";
-	document.getElementById("password_error").innerHTML="";
 	var username=document.getElementById('idusername');
 	var password=document.getElementById('idpassword');
 	var name=username.value;
@@ -21,7 +19,7 @@ function xuli(e){
 		}else{
 			if(pass == ""){
 				password.style.border="1px solid red";
-				document.getElementById("password_error").innerHTML="password is required!";
+				document.getElementById('password_error').innerHTML="password is required!";
 				document.getElementById('password_error').style.color="red";
 				return false;
 			}

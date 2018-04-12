@@ -19,7 +19,7 @@
 				<p id="username_error" style="font-size: 20px"></p>
 			</div>
 			<div style="font-size: 40px;margin-left: 50px;width: 505px">
-				<input type="text" id="idpassword" name="password" placeholder="Password" style="font-size: 40px;width: 5̀05px;height: 50px;"><br>
+				<input type="password" id="idpassword" name="password" placeholder="Password" style="font-size: 40px;width: 5̀05px;height: 50px;"><br>
 				<p id"password_error" style="font-size: 20px"></p>
 			</div>
 			<div style="font-size: 20px;margin-left: 50px;color: red"><?php if($error==1) echo "<p id='error'>username or password is incorrect!!!</p>"; ?></div>
