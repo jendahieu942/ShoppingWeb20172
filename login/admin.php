@@ -3,7 +3,6 @@
 <head>
 	<title>Admin</title>
 	<meta charset="utf-8">
-	<script src=admin.js></script>
 	<style type="text/css">
 		#cover{
 			height: 800px;
@@ -47,7 +46,7 @@
 			<form action="admin.php" method="post">
 				<?php
 					$db=mysqli_connect("localhost","root","","shoppingweb");
-					$sql="select * from supplier";
+					$sql="select * from supplier order by namesupplier";
 					$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
 					while($row=mysqli_fetch_array($result)){
 						$id=$row['idsupplier'];
@@ -62,9 +61,10 @@
 		</div>
 		<div id="view">
 			<?php
-				include "view_admin.php";	
+				include "view_admin.php";
 			?>
 		</div>
+		<script src="admin.js"></script>
 	</div>
 </body>
 </html>
