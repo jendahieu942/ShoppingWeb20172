@@ -7,7 +7,6 @@
 	<script src="hay.js"></script>
 	<?php
 		include "xulilogin.php";
-	}
 	?>
 </head>
 <body style="background-color: #3366ff">
