@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.7.9
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Apr 09, 2018 at 07:00 PM
--- Server version: 5.7.21-0ubuntu0.16.04.1
--- PHP Version: 7.0.28-0ubuntu0.16.04.1
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th4 09, 2018 lúc 09:55 AM
+-- Phiên bản máy phục vụ: 10.1.31-MariaDB
+-- Phiên bản PHP: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,149 +19,121 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shoppingweb`
+-- Cơ sở dữ liệu: `shoppingweb`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bill`
+-- Cấu trúc bảng cho bảng `bill`
 --
 
 CREATE TABLE `bill` (
-  `billId` int(10) NOT NULL,
-  `proId` int(10) NOT NULL,
-  `userId` int(10) NOT NULL,
-  `quantity` int(10) DEFAULT NULL,
-  `paidDate` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `proid` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `paidDate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
 CREATE TABLE `cart` (
-  `cartId` int(10) NOT NULL,
-  `proId` int(10) NOT NULL,
-  `userId` int(10) NOT NULL,
-  `quantity` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `proid` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
-  `proId` int(10) NOT NULL,
-  `proName` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `supplier` varchar(50) DEFAULT NULL,
-  `srcSolution` varchar(30) DEFAULT NULL,
-  `storage` varchar(30) DEFAULT NULL,
-  `price` int(20) DEFAULT NULL,
-  `quantity` int(10) DEFAULT NULL,
-  `img` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `product`
---
-
-INSERT INTO `product` (`proId`, `proName`, `supplier`, `srcSolution`, `storage`, `price`, `quantity`, `img`) VALUES
-(1, 'iPhone 6s', 'Apple', '5.6 inches', '32GB', 600, 100, 'assets/img/s0001.png'),
-(2, 'a', 'a', '', '32GB', 600, 2, 'assets/img/iphone-6-32gb-gold.png'),
-(3, 'a', 'a', '', '32GB', 600, 2, 'assets/img/iphone-6s.jpg');
+  `proid` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `supplier` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `src` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
-  `userId` int(10) NOT NULL,
-  `firstName` varchar(30) DEFAULT NULL,
-  `lastName` varchar(30) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `phoneNumber` varchar(20) DEFAULT NULL,
-  `dateOfBirth` date DEFAULT NULL,
-  `address` varchar(50) DEFAULT NULL,
-  `userName` varchar(50) DEFAULT NULL,
-  `userPassword` varchar(100) DEFAULT NULL,
-  `role` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `username` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `role` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`username`, `password`, `email`, `address`, `phone`, `role`) VALUES
+('haianh', 'haianh', '', '', '', 1),
+('truong', 'truong', '', '', '', 1);
+
+--
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `bill`
+-- Chỉ mục cho bảng `bill`
 --
 ALTER TABLE `bill`
-  ADD PRIMARY KEY (`billId`),
-  ADD KEY `fk1_billUser` (`userId`),
-  ADD KEY `fk2_billProduct` (`proId`);
+  ADD PRIMARY KEY (`proid`,`username`),
+  ADD KEY `fk2_bill` (`username`);
 
 --
--- Indexes for table `cart`
+-- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`cartId`),
-  ADD KEY `fk1_proCart` (`proId`),
-  ADD KEY `fk2_userCart` (`userId`);
+  ADD PRIMARY KEY (`proid`,`username`),
+  ADD KEY `fk2_cart` (`username`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
-  ADD PRIMARY KEY (`proId`);
+  ADD PRIMARY KEY (`proid`);
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`userId`);
+  ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `bill`
+-- Các ràng buộc cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `billId` int(10) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `proId` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `userId` int(10) NOT NULL AUTO_INCREMENT;
---
--- Constraints for dumped tables
---
+  ADD CONSTRAINT `fk1_bill` FOREIGN KEY (`proid`) REFERENCES `product` (`proid`),
+  ADD CONSTRAINT `fk2_bill` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
 
 --
--- Constraints for table `bill`
---
-ALTER TABLE `bill`
-  ADD CONSTRAINT `fk1_billUser` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`),
-  ADD CONSTRAINT `fk2_billProduct` FOREIGN KEY (`proId`) REFERENCES `product` (`proId`);
-
---
--- Constraints for table `cart`
+-- Các ràng buộc cho bảng `cart`
 --
 ALTER TABLE `cart`
-  ADD CONSTRAINT `fk1_proCart` FOREIGN KEY (`proId`) REFERENCES `product` (`proId`),
-  ADD CONSTRAINT `fk2_userCart` FOREIGN KEY (`userId`) REFERENCES `user` (`userId`);
+  ADD CONSTRAINT `fk1_cart` FOREIGN KEY (`proid`) REFERENCES `product` (`proid`),
+  ADD CONSTRAINT `fk2_cart` FOREIGN KEY (`username`) REFERENCES `user` (`username`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
