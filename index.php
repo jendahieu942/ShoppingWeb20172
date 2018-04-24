@@ -67,20 +67,8 @@
             <div id="account">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <form class="navbar-form navbar-left" action="/action_page.php">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                        </form>
                     </li>
-                    <li>
-                    </li>
-                    <li id="login"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li id="login"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     <li id="cart"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
                 </ul>
             </div>
@@ -167,7 +155,7 @@
                 </div>
                 <div class="row" id ="samsung">
                         <!--Here display mobile info receive from PHP server-->
-                        <?php ?>
+                        <?php include 'assets/process/samsung-process.php'?>
                 </div>
         </div>
     </div>

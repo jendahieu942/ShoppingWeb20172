@@ -1,74 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./dinhdang.css">
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
+    <title>Sign up page - G13MoblieShop</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <style>
+    .modal-header{
+        background-color: #d439c0;
+        color: white;
+        text-align: center;
+        border-radius: 5px 5px 0px 0px;
+    }
+    </style>
 </head>
-<body style="background: #3366ff">
-	<div class="modal-dialog">
-        <!--modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Sign Up</h3>
-            </div>
-            <!--Modal body-->
-            <div class="modal-body">
-                <form method="POST" action="">
-                    <!-- json response will be here-->
-                    <div id="errorDiv"></div>
-                    <!-- json response will be above-->
-                    <div class="modal-group">
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="firstname" class="col-form-label">First name: </label>
-                                <input class="form-control" type="text" name="firstname" id="fistname" placeholder="First name">
+
+<!--Content-->
+<body background="assets/img/signup.jpg">
+    <!--Modal Sign Up-->
+        <div class="modal-dialog">
+            <!--modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Log In</h3>
+                </div>
+                
+                <!--Modal body-->
+                <div class="modal-body">
+                    <form method="POST" id="signup-form" action="assets/process/login-process.php">
+                        <!-- json response will be here-->
+                        <div id="errorDiv"></div>
+                        <!-- json response will be above-->
+                        <br/>
+                        <div class="modal-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input class="form-control" type="text" name="username" id="username"required placeholder="User name">
                                 <span class="help-block" id="error">
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="lastname" class="col-form-label">Last name: </label>
-                                <input class="form-control" type="text" name="lastname" id="lastname" placeholder="">
+                            <br/>
+                            <div class="input-group"> 
+                                <span class="input-group-addon"><i class="	glyphicon glyphicon-lock"></i></span>
+                                <input class="form-control" type="password" name="password" id="password" required placeholder="Password">
                                 <span class="help-block" id="error">
                             </div>
+                            <hr/>
+                            <p>Do not have account? <a href="signup.php"> Sign Up</a></p>
+                            <p>View product without login? <a href="index.php">Home page</a></p>
+                            <input class='form-control btn-success' type ='submit' id="login_button" name="login-btn" value="Log In">
                         </div>
-                        <div class="form-group">
-                            <label for="birthday" class="col-form-label">Date of birth: </label>
-                            <input class="form-control" type="date" name="birthday" id="birthday">
-                            <span class="help-block" id="error">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="col-form-label">Email: </label>
-                            <input class="form-control" type="email" name="email" id="email">
-                            <span class="help-block" id="error">
-                        </div>
-                        <div class="form-group">
-                            <label for="username" class="col-form-label">
-                                <span class="glyphicon glyphicon-user"></span>User name:
-                            </label>
-                            <input class="form-control" type="text" name="username" id="username"required>
-                            <span class="help-block" id="error">
-                        </div>
-                        <div class="form-group"> 
-                            <label for="password" class="col-form-label">
-                                <span class="glyphicon glyphicon-lock"></span>Password:
-                            </label>
-                            <input class="form-control" type="password" name="password" id="password" required>
-                            <span class="help-block" id="error">
-                        </div>
-                        <div class="form-group">
-                            <label for="repassword" class="col-form-label">
-                                <span class="glyphicon glyphicon-lock"></span>Repeat Password:
-                            </label>
-                            <input class="form-control" type="password" name="repassword" id="repassword" required>
-                            <span class="help-block" id="error">
-                        </div>
-                        <hr/>
-                        <input class='form-control btn-success' type ='submit' id="signup_button" value="Sign Up">
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 </body>
 </html>

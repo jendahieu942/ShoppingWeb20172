@@ -9,9 +9,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
     <style>
-    .modal-header{
-        background-color: #d439c0;
+    .colorme{
+        background-color: #156beb;
         color: white;
+        border-radius: 5px 5px 0px 0px;
     }
     </style>
 </head>
@@ -22,17 +23,17 @@
         <div class="modal-dialog">
             <!--modal content-->
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header colorme">
                     <h3 class="modal-title">Sign Up</h3>
                 </div>
                 
                 <!--Modal body-->
                 <div class="modal-body">
-                    <form method="POST" id="signup-form">
+                    <form method="POST" id="signup-form" action="assets/process/signup-process.php">
                         <!-- json response will be here-->
                         <div id="errorDiv"></div>
                         <!-- json response will be above-->
-                        
+                        <br/>
                         <div class="modal-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-align-left"></i></span>
@@ -76,7 +77,8 @@
                                 <span class="help-block" id="error">
                             </div>
                             <hr/>
-                            <input class='form-control btn-success' type ='submit' id="signup_button" value="Sign Up">
+                            <p>Already a member? <a href="login.php"> Sign In</a></p>
+                            <input class='form-control btn-success' type ='submit' id="signup_button" name="signup-btn" value="Sign Up">
                         </div>
                     </form>
                 </div>
