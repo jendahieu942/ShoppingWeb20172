@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+    <script src="assets/js/login.js"></script>
     <style>
     .modal-header{
         background-color: #d439c0;
@@ -30,36 +30,29 @@
                 
                 <!--Modal body-->
                 <div class="modal-body">
-                    <form method="POST" id="signup-form" action="assets/process/login-process.php">
+                    <form id="loginform" method="POST">
                         <!-- json response will be here-->
-                        <div id="errorDiv"></div>
+                        <div id="result"></div>
                         <!-- json response will be above-->
                         <br/>
                         <div class="modal-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                 <input class="form-control" type="text" name="username" id="username"required placeholder="User name">
-                                <span class="help-block" id="error">
                             </div>
                             <br/>
                             <div class="input-group"> 
                                 <span class="input-group-addon"><i class="	glyphicon glyphicon-lock"></i></span>
                                 <input class="form-control" type="password" name="password" id="password" required placeholder="Password">
-                                <span class="help-block" id="error">
                             </div>
                             <hr/>
                             <p>Do not have account? <a href="signup.php"> Sign Up</a></p>
                             <p>View product without login? <a href="index.php">Home page</a></p>
-                            <input class='form-control btn-success' type ='submit' id="login_button" name="login-btn" value="Log In">
+                            <input class='form-control btn-success' type ='submit' id="login_btn" name="login-btn" value = "Log In">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
 </body>
 </html>
