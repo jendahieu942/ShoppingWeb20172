@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php 
+        session_start();
+    ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -68,7 +71,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                     </li>
-                    <li id="login"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <?php
+                        if(isset($_SESSION['username'])){
+                            echo"<li id='user_logout'><a><span class='glyphicon glyphicon-user'></span> ".$_SESSION['username']."</a></li><li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
+                        }else{
+                            echo "<li id='login'><a href='login.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
+                        }
+                    ?>
                     <li id="cart"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
                 </ul>
             </div>
