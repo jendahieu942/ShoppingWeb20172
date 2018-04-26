@@ -16,18 +16,11 @@ if ($connect->connect_error) {
             $data.array_push($data,$row);
         }
     }
-    foreach( $data as $row ){
-        echo '<div class="col-md-3 text-center col-md-6 col-xs-6">';
-            echo '<div class="thumbnail product-box redborder">';
-                    echo '<img class= "resize" src="'.$row["img"].'">';
-                    echo '<div class="caption">';
-                        echo '<h4><a href="#">'.$row["proName"].'</a></h4>';
-                        echo '<p>Price: <strong> $'.$row["price"].'</strong></p>';
-                        echo '<button class="btn btn-success" id="'.$row["proId"].'">Add to cart</button>';
-                    echo '</div>';
-            echo '</div>';
-        echo '</div>';
-    }
+
+    $file = json_encode($data);
+    echo  $file;
+
+
 }
 mysqli_close($connect);
 ?>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +46,7 @@
     </style>
 </head>
 <body>
+
 <div class="container slide">
         <form id="search" class="form-group col-md-12" action="/action_page.php">
             <div class="input-group">
@@ -55,26 +60,11 @@
         </form>
 </div>
 <!--Nav bar-->
-<div data-spy="affix">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="./index.php">G13MobileShop</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="./index.php">Home</a></li>
-            </ul>
-            <div id="account">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                    </li>
-                    <li id="login"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    <li id="cart"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
+
+<?php 
+    include 'view/navbar.php';
+?>
+
 <!--Main view-->
 <div class="container container-fluid">
     <div class="row">
@@ -145,7 +135,6 @@
             </div>
             <div class="row" id= "apple">
                     <!--Here display mobile info-->
-                    <?php include 'assets/process/apple-process.php';?>
             </div>
             <div>
                     <ol class="breadcrumb">
@@ -167,6 +156,7 @@
 <!--bootstrap JavaScript file  -->
 <script src="assets/js/bootstrap.js"></script>
 <!-- /javascript file -->
-<script src="assets/js/signup.js" type="text/javascript"></script>
+<script src="assets/js/logout.js"></script>
+<script src="assets/js/show-apple-products.js"></script>
 </body>
 </html>

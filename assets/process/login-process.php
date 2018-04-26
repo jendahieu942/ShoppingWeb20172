@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once 'connection.php';
 
 if(isset($_POST['username'])){
@@ -19,7 +21,7 @@ if(isset($_POST['username'])){
             $phone = $row['phoneNumber'];
             $birthday = $row['dateOfBirth'];
             $address = $row['address'];
-            session_start();
+
             $_SESSION['id'] = $id;
             $_SESSION['userName'] = $username;
         }
