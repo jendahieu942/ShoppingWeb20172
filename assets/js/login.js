@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $('#loginform').submit( function(event) {
         event.preventDefault();
+        alert($('#username').val());
         $.ajax({
             type: "POST",
             url: '/ShoppingWeb20172/assets/process/login-process.php',

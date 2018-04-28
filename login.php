@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--    <script src="assets/js/login.js"></script>-->
     <style>
     .modal-header{
         background-color: #d439c0;
@@ -16,9 +15,6 @@
         border-radius: 5px 5px 0px 0px;
     }
     </style>
-    <?php
-        include "login/xulilogin.php";
-    ?>
 </head>
 
 <!--Content-->
@@ -57,5 +53,6 @@
                 </div>
             </div>
         </div>
+<script src="assets/js/login.js"></script>
 </body>
 </html>

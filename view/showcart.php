@@ -49,6 +49,7 @@ session_start();
 <?php 
     include 'navbar.php';
 ?>
+<!-- Main view-->
 <!--Main view end-->
 <!-- Javascript file-->
 <!--Core JavaScript file  -->

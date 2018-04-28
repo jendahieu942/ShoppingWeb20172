@@ -63,40 +63,11 @@ session_start();
         </form>
 </div>
 <!--Nav bar-->
-<<<<<<< HEAD
 
 <?php 
     include 'view/navbar.php';
 ?>
 
-=======
-<div data-spy="affix">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="./index.php">G13MobileShop</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="./index.php">Home</a></li>
-            </ul>
-            <div id="account">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                    </li>
-                    <?php
-                        if(isset($_SESSION['username'])){
-                            echo"<li id='user_logout'><a><span class='glyphicon glyphicon-user'></span> ".$_SESSION['username']."</a></li><li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
-                        }else{
-                            echo "<li id='login'><a href='login.php'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
-                        }
-                    ?>
-                    <li id="cart"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
->>>>>>> 76c9a895ec3413407c327b2e345faf66e09cb232
 <!--Main view-->
 <div class="container container-fluid">
     <div class="row">
@@ -165,7 +136,7 @@ session_start();
                     <li class="active">Apple</li>
                 </ol>
             </div>
-            <div class="row" id= "apple">
+            <div class="swiper-container" id="apple">
                     <!--Here display mobile info-->
             </div>
             <div>
@@ -176,7 +147,6 @@ session_start();
                 </div>
                 <div class="row" id ="samsung">
                         <!--Here display mobile info receive from PHP server-->
-                        <?php include 'assets/process/samsung-process.php'?>
                 </div>
         </div>
     </div>
@@ -189,6 +159,6 @@ session_start();
 <script src="assets/js/bootstrap.js"></script>
 <!-- /javascript file -->
 <script src="assets/js/logout.js"></script>
-<script src="assets/js/show-apple-products.js"></script>
+<script src="assets/js/show-products.js"></script>
 </body>
 </html>
