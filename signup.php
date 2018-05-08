@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
     <style>
     .colorme{
         background-color: #156beb;
@@ -15,36 +14,6 @@
         border-radius: 5px 5px 0px 0px;
     }
     </style>
-     <?php
-        $error="";
-        if(isset($_POST['signup-btn'])){
-            $firstname=$_POST['firstname'];
-            $lastname=$_POST['lastname'];
-            $birthday=$_POST['birthday'];
-            $email=$_POST['email'];
-            $phone=$_POST['phone'];
-            $address=$_POST['address'];
-            $username=$_POST['username'];
-            $password=$_POST['password'];
-            $repassword=$_POST['repassword'];
-            $db=mysqli_connect("localhost","root","12345","shoppingweb");
-            $sql="select username from user";
-            $result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
-            while($row=mysqli_fetch_array($result)){
-                if($username == $row['username']){
-                    $error="username is existed";
-                }
-            }
-            if($error==""){
-                $sql="insert into user(firstName,lastName,email,phoneNumber,dateOfBirth,address,userName,userPassword,role) values ('$firstname','$lastname','$email','$phone','$birthday','$address','$username','$password',1)";
-                mysqli_query($db,$sql);
-                mysqli_close($db);
-                header("location: login.php");
-            }else{
-                mysqli_close($db);
-            }
-        }
-    ?>
 </head>
 
 <!--Content-->
