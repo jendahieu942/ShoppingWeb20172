@@ -10,45 +10,16 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="assets/css/swiper.min.css">
     <title>Home Page - G13MobileShop</title>
-    <style>
-    .affix {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        z-index: 10 !important;
-    }
-
-    .affix + .container-fluid {
-        padding-top: 10px;
-    }
-    
-    .content{
-        background: ;
-    }
-    
-    .redborder {
-        border: 1px solid #79dd1b;
-        box-shadow: 1px 2px 10px 1px #8dbdcf;
-    }
-    .resize {
-        width: 90px;
-        height: auto;
-    }
-    .product-box {
-        box-sizing: border-box;
-        width: 200px;
-        height: 300px;
-    }
-    .slide{
-        padding-top:30px;
-    }
-    </style>
+    <link rel="stylesheet" href="/ShoppingWeb20172/assets/css/style.css">
 </head>
 <body>
+
+<!--Nav bar-->
+
+<?php 
+    include 'view/navbar.php';
+?>
 
 <div class="container slide">
         <form id="search" class="form-group col-md-12" action="/action_page.php">
@@ -62,12 +33,7 @@ session_start();
             </div>
         </form>
 </div>
-<!--Nav bar-->
 
-<?php 
-    include 'view/navbar.php';
-?>
-  
 <!--Main view-->
 <div class="container container-fluid">
     <div class="row">
@@ -136,19 +102,29 @@ session_start();
                     <li class="active">Apple</li>
                 </ol>
             </div>
-            <div id ="apple">
+            <div class="flex-container" id ="apple">
                         <!--Here display mobile info receive from PHP server-->
             </div>
 
             <div>
-                    <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li class="active">SamSung</li>
-                    </ol>
-                </div>
-                <div id ="samsung">
-                        <!--Here display mobile info receive from PHP server-->
-                </div>
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">SamSung</li>
+                </ol>
+            </div>
+            <div class="flex-container" id ="samsung">
+                    <!--Here display mobile info receive from PHP server-->
+            </div>
+
+            <div>
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">China</li>
+                </ol>
+            </div>
+            <div class="flex-container" id ="other">
+                    <!--Here display mobile info receive from PHP server-->
+            </div>
         </div>
     </div>
 </div>
@@ -159,21 +135,7 @@ session_start();
 <!--bootstrap JavaScript file  -->
 <script src="assets/js/bootstrap.js"></script>
 <!-- /javascript file -->
-<script src="assets/js/logout.js"></script>
-<script src="assets/js/show-products.js"></script>
-  <!-- Swiper JS -->
-  <script src="assets/js/swiper.min.js"></script>
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 6,
-      spaceBetween: 10,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-  </script>
+<script type="text/javascript" src="assets/js/logout.js"></script>
+<script type="text/javascript" src="assets/js/show-products.js"></script>
 </body>
 </html>

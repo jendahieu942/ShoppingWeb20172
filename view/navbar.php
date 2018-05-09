@@ -4,10 +4,13 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./index.php">G13MobileShop</a>
+                    <a class="navbar-brand" href="/ShoppingWeb20172/index.php">G13MobileShop</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="./index.php">Home</a></li>
+                    <li'?> <?php echo (strlen($_SERVER['REQUEST_URI'])===27) ? "class='active'" : "";?> <?php echo '><a href="/ShoppingWeb20172/index.php">Home</a></li>
+                    <li><a href="/ShoppingWeb20172/index.php#apple">Apple</a></li>
+                    <li><a href="/ShoppingWeb20172/index.php#samsung">Samsung</a></li>
+                    <li><a href="/ShoppingWeb20172/index.php">Other</a></li>
                 </ul>
                 <div>
                     <ul class="nav navbar-nav navbar-right">
@@ -30,7 +33,10 @@
                     <a class="navbar-brand" href="./index.php">G13MobileShop</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="./index.php">Home</a></li>
+                    <li'?> <?php echo (strlen($_SERVER['REQUEST_URI'])===27) ? "class='active'" : "";?> <?php echo '><a href="/ShoppingWeb20172/index.php">Home</a></li>
+                    <li><a href="/ShoppingWeb20172/index.php#apple">Apple</a></li>
+                    <li><a href="/ShoppingWeb20172/index.php#samsung">Samsung</a></li>
+                    <li><a href="/ShoppingWeb20172/index.php">Other</a></li>
                 </ul>
                 <div>
                     <ul class="nav navbar-nav navbar-right">
