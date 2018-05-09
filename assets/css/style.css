@@ -22,8 +22,8 @@
     position: relative;
 }
 .resize {
-    width: 90px;
-    height: auto;
+    width: 120px;
+    height: 150px;
 }
 .product-box {
     box-sizing: border-box;

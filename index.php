@@ -136,6 +136,7 @@ session_start();
 <script src="assets/js/bootstrap.js"></script>
 <!-- /javascript file -->
 <script type="text/javascript" src="assets/js/logout.js"></script>
+<script type="text/javascript" src="assets/js/signup.js"></script>
 <script type="text/javascript" src="assets/js/show-products.js"></script>
 </body>
 </html>

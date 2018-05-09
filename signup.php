@@ -28,7 +28,7 @@
                 
                 <!--Modal body-->
                 <div class="modal-body">
-                    <form method="POST" id="signup-form" action="">
+                    <form method="POST" id="signupform">
                         <!-- json response will be here-->
                         <div id="errorDiv"></div>
                         <!-- json response will be above-->
@@ -37,55 +37,46 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-align-left"></i></span>
                                 <input class="form-control" type="text" name="firstname" id="fistname" placeholder="First name" required>
-                                <span class="help-block" id="error">
                             </div>
                             <br/>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-align-right"></i></span>
                                 <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Last name" required>
-                                <span class="help-block" id="error">
                             </div>
                             <br/>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                 <input data-toggle="tooltip" data-placement="top" title="Your birthday" class="form-control" type="date" name="birthday" id="birthday">
-                                <span class="help-block" id="error">
                             </div>
                             <br/>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
                                 <input class="form-control" type="email" name="email" id="email" placeholder="Email">
-                                <span class="help-block" id="error">
                             </div>
                             <br/>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
                                 <input class="form-control" type="text" name="phone" id="phonenumber" placeholder="Phone">
-                                <span class="help-block" id="error">
                             </div>
                             <br/>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                                 <input class="form-control" type="text" name="address" id="address" placeholder="Address">
-                                <span class="help-block" id="error">
                             </div>
                             <br/>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                 <input class="form-control" type="text" name="username" id="username"required placeholder="User name">
-                                <span class="help-block" id="error">
                             </div>
                             <br/>
                             <div class="input-group"> 
                                 <span class="input-group-addon"><i class="	glyphicon glyphicon-lock"></i></span>
                                 <input class="form-control" type="password" name="password" id="password" required placeholder="Password">
-                                <span class="help-block" id="error">
                             </div>
                             <br/>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="	glyphicon glyphicon-lock"></i></span>
                                 <input class="form-control" type="password" name="repassword" id="repassword" required placeholder="Re-Password">
-                                <span class="help-block" id="error">
                             </div>
                             <hr/>
                             <p>Already a member? <a href="login.php"> Log In</a></p>
@@ -100,5 +91,6 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
 </script>
+<script type="text/javascript" src="assets/js/signup.js"></script>
 </body>
 </html>

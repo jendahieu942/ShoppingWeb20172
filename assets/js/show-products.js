@@ -80,8 +80,7 @@ function load_other(){
                                 '<h4><a href="#">'+other[i].proName+'</a></h4>'+
                                 '<p>Price: <strong> $'+other[i].price+'</strong></p>'+
                             '</div>'+
-                            '<div class = "tool-div">'+
-                                '<a class="btn btn-success" id="" '+
+                            '<div class = "tool-div"> <span><a class="btn btn-success atc" id="" '+
                                 'href="/ShoppingWeb20172/assets/process/add-to-cart.php'+
                                 '?id='+other[i].proId+
                                 '&name='+other[i].proName+
