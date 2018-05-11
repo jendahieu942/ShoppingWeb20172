@@ -22,8 +22,6 @@ function load_samsung(){
                                 '<a class= "btn btn-default atc" id = ""'+
                                 'href="view/view-detail.php'+
                                 '?id='+samsung[i].proId+
-                                '&name='+samsung[i].proName+
-                                '&price='+samsung[i].price+
                                 '">View Detail</a></span>'+
                             '</div>'+
                         '</div>';
@@ -52,10 +50,8 @@ function load_apple(){
                                 '?id='+apple[i].proId+
                                 '&name='+apple[i].proName+
                                 '&price='+apple[i].price+'">Add to cart</a>'+
-                                '<a class= "btn btn-default atc" href="view/view-detail.php'+
+                                '<a class= "btn btn-default atc" id="showdt" href="view/view-detail.php'+
                                 '?id='+apple[i].proId+
-                                '&name='+apple[i].proName+
-                                '&price='+apple[i].price+
                                 '">View Detail</a></span>'+
                             '</div>'+
                         '</div>';
@@ -87,8 +83,6 @@ function load_other(){
                                 '&price='+other[i].price+'">Add to cart</a>'+
                                 '<a class= "btn btn-default atc" href="view/view-detail.php'+
                                 '?id='+other[i].proId+
-                                '&name='+other[i].proName+
-                                '&price='+other[i].price+
                                 '">View Detail</a></span>'+
                             '</div>'+
                         '</div>';

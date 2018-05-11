@@ -130,11 +130,6 @@ session_start();
 </div>
 <!--Main view end-->
 <!-- Javascript file-->
-<!--Core JavaScript file  -->
-<script src="assets/js/jquery-1.10.2.js"></script>
-<!--bootstrap JavaScript file  -->
-<script src="assets/js/bootstrap.js"></script>
-<!-- /javascript file -->
 <script type="text/javascript" src="assets/js/logout.js"></script>
 <script type="text/javascript" src="assets/js/signup.js"></script>
 <script type="text/javascript" src="assets/js/show-products.js"></script>

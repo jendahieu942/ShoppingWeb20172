@@ -30,7 +30,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="./index.php">G13MobileShop</a>
+                    <a class="navbar-brand" href="/ShoppingWeb20172/index.php">G13MobileShop</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li'?> <?php echo (strlen($_SERVER['REQUEST_URI'])===27) ? "class='active'" : "";?> <?php echo '><a href="/ShoppingWeb20172/index.php">Home</a></li>

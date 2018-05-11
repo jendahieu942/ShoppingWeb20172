@@ -114,11 +114,6 @@ mysqli_close($connect);
     </div>
 </div>
 <!-- Javascript file-->
-<!--Core JavaScript file  -->
-<script src="assets/js/jquery-1.10.2.js"></script>
-<!--bootstrap JavaScript file  -->
-<script src="assets/js/bootstrap.js"></script>
-<!-- /javascript file -->
 <script src="/ShoppingWeb20172/assets/js/logout.js"></script>
 </body>
 </html>

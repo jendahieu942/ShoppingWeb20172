@@ -1,5 +1,29 @@
 <?php
 session_start();
+include_once '../assets/process/connection.php';
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+
+    $sql = "SELECT * FROM product WHERE proId = '$id'";
+    if($result = mysqli_query($conn,$sql)){
+        while ($row = $result->fetch_assoc()) {
+            $name = $row['proName'];
+            $sup = $row['supplier'];
+            $scr = explode('-',$row['scrSolution']);
+            foreach ($scr as $key => $value) {
+                $arr = explode(":",$value);
+                $scr[$key] = array($arr[0]=>$arr[1]);
+            }
+            $storage = $row['storage'];
+            $price = $row['price'];
+            $quantity = $row['quantity'];
+            $img = $row['img'];
+        }
+    } else {
+
+    }
+mysqli_close($conn);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,20 +38,24 @@ session_start();
     <title id="title" ></title>
     <style>
         .img-product{
-            background-color: blue;
+            border: 1px solid green;
+            border-radius: 10px;
             width: 250px;
-            height: 300px;
+            height: 350px;
+            position: relative;
+            padding: 10px;
         }
-        .img-product1{
-            background-color: red;
-            width: 100px;
-            height: 100px;
-            margin-left: 10px;
-            margin-right: 10px;
+        .img-toshow{
+            border-radius: 10px;
+            width: 230px;
+            height: 320px;
         }
         .flex-row-table{
             display: flex;
             flex-wrap: wrap;
+        }
+        td{
+            text-align: center;
         }
     </style>
 </head>
@@ -35,27 +63,43 @@ session_start();
 <?php include '../view/navbar.php';?>
 
 <div class="container">
+    <div>
+    <font size = 6 color = "blue">Here's all information about "<?php echo $name;?>"</font>
+    </div>
+    <hr/>
     <div class= "row"> 
         <div class = "col-md-3">
-            <div class = "img-product"> abc </div>
-
+            <div class = "img-product" id="image-product">
+                <!-- Image display here-->
+                <img class="img-toshow" src=<?php echo "'../$img'";?> >
+            </div>
         </div>
-        <div class = "col-md-9 flex-row-table">
-            <div class = "img-product1"> abc </div>
-            <div class = "img-product"> abc </div>
-            <div class = "img-product1"> abc </div>
-            <div class = "img-product"> abc </div>
-            <div class = "img-product1"> abc </div>
+        <div class = "col-md-9" id = "info-product">
+            <ul class="list-group">
+            <li class="list-group-item">Supplier: <?php echo $sup;?></li>
+            <li class="list-group-item">
+                <table>
+                    <?php 
+                    foreach ($scr as $key => $value) {
+                        echo "<tr>";
+                        foreach ($value as $nkey => $nvalue) {
+                            echo "<th>".$nkey."</th>";
+                            echo "<td>:-:</td>";
+                            echo "<td>".$nvalue."</td>";
+                        }
+                        echo "</tr>";
+                    }
+                ?>
+                </table>
+            </li>
+            <li class="list-group-item">Storage: <?php echo $storage;?></li>
+            <li class="list-group-item">Price: <strong> $ <?php echo $price;?></strong></li>
+            </ul>
         </div>
     </div>
 </div>
 
 <!-- Javascript file-->
-<!--Core JavaScript file  -->
-<script src="assets/js/jquery-1.10.2.js"></script>
-<!--bootstrap JavaScript file  -->
-<script src="assets/js/bootstrap.js"></script>
-<!-- /javascript file -->
 <script src="/ShoppingWeb20172/assets/js/logout.js"></script>
 </body>
 </html>
