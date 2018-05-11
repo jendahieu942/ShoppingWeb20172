@@ -19,7 +19,7 @@ function load_samsung(){
                                 '?id='+samsung[i].proId+
                                 '&name='+samsung[i].proName+
                                 '&price='+samsung[i].price+'">Add to cart</a>'+
-                                '<a class= "btn btn-default atc" id = ""'+
+                                '<a class= "btn btn-default atc" id = "addtocart"'+
                                 'href="view/view-detail.php'+
                                 '?id='+samsung[i].proId+
                                 '">View Detail</a></span>'+

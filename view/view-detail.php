@@ -84,7 +84,7 @@ mysqli_close($conn);
                         echo "<tr>";
                         foreach ($value as $nkey => $nvalue) {
                             echo "<th>".$nkey."</th>";
-                            echo "<td>:-:</td>";
+                            echo "<td>\t</td>";
                             echo "<td>".$nvalue."</td>";
                         }
                         echo "</tr>";
@@ -96,15 +96,15 @@ mysqli_close($conn);
             <li class="list-group-item">Price: <strong> $ <?php echo $price;?></strong></li>
             </ul>
             <span>
-            <input type="number" value=1 min=1>
-            <a class="btn btn-success" href="../process/add-to-cart.php"> Add to cart </a>
+            <input id="quantity" idproduct=<?=$id?> type="number" value=1 min=1>
+            <a class="btn btn-success" id="addtocart"> Add to cart </a>
             <a class="btn btn-default" href="showcart.php">View cart</a>
             </span>
         </div>
     </div>
 </div>
-
 <!-- Javascript file-->
 <script src="/ShoppingWeb20172/assets/js/logout.js"></script>
+<script src="/ShoppingWeb20172/assets/js/addtocart.js"></script>
 </body>
 </html>
