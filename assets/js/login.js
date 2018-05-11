@@ -7,7 +7,7 @@ $(document).ready(function(){
             data: $(this).serialize(),
             success: function (data) {
                 if(data == 1){
-                    window.location = '/ShoppingWeb20172/index.php';
+                    window.location = "/ShoppingWeb20172/index.php";
                 } else {
                     alert("FAILED: User or password was not corrected");
                 }

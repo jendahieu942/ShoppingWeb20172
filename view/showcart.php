@@ -1,5 +1,6 @@
 <?php
 session_start();
+if(isset($_SESSION['userName'])):
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,3 +118,9 @@ mysqli_close($connect);
 <script src="/ShoppingWeb20172/assets/js/logout.js"></script>
 </body>
 </html>
+<?php
+else:
+    $_SESSION['previouspage'] = $_SERVER['REQUEST_URI'];
+    header('Location: /ShoppingWeb20172/login.php');
+endif;
+?>
