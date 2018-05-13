@@ -1,15 +1,16 @@
 <?php
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
     <title>Home Page - G13MobileShop</title>
     <link rel="stylesheet" href="/ShoppingWeb20172/assets/css/style.css">
 </head>
@@ -19,21 +20,8 @@ session_start();
 
 <?php 
     include 'view/navbar.php';
+    include 'view/search.php';
 ?>
-
-<div class="container slide">
-        <form id="search" class="form-group col-md-12" action="/action_page.php">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" name="search">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                        <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-</div>
-
 <!--Main view-->
 <div class="container container-fluid">
     <div class="row">
@@ -95,7 +83,9 @@ session_start();
             </div>
         </div>
         <!-- /.col-->
-        <div class="col-md-9">
+        <div class="col-md-9" id= "showproduct">
+            <div id="resultsearch" style="text-align:center;">
+            </div>
             <div>
                 <ol class="breadcrumb" id="apple-bar">
                     <li><a href="#">Home</a></li>
@@ -133,5 +123,6 @@ session_start();
 <script type="text/javascript" src="assets/js/logout.js"></script>
 <script type="text/javascript" src="assets/js/signup.js"></script>
 <script type="text/javascript" src="assets/js/show-products.js"></script>
+<script type="text/javascript" src="assets/js/search.js"></script>
 </body>
 </html>

@@ -24,6 +24,7 @@ if(isset($_POST['username'])){
 
             $_SESSION['id'] = $id;
             $_SESSION['userName'] = $username;
+            $_SESSION['name'] = $fname." ".$lname;
         }
         echo 1;
     }

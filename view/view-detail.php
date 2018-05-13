@@ -1,5 +1,6 @@
 <?php
 session_start();
+sleep(1);
 include_once '../assets/process/connection.php';
 if(isset($_GET['id'])){
     $id = $_GET['id'];
@@ -60,7 +61,8 @@ mysqli_close($conn);
     </style>
 </head>
 <body>
-<?php include '../view/navbar.php';?>
+<?php include '../view/navbar.php';
+?>
 
 <div class="container">
     <div>

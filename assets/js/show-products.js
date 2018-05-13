@@ -15,11 +15,11 @@ function load_samsung(){
                             '</div>'+
                             '<div class="tool-div"><span>'+
                                 '<a class="btn btn-success atc" id="" '+
-                                'href="/ShoppingWeb20172/assets/process/add-to-cart.php'+
+                                'href="/ShoppingWeb20172/assets/process/add-to-cart-directly.php'+
                                 '?id='+samsung[i].proId+
                                 '&name='+samsung[i].proName+
                                 '&price='+samsung[i].price+'">Add to cart</a>'+
-                                '<a class= "btn btn-default atc" id = "addtocart"'+
+                                '<a class= "btn btn-default atc" id = "showdt"'+
                                 'href="view/view-detail.php'+
                                 '?id='+samsung[i].proId+
                                 '">View Detail</a></span>'+
@@ -46,7 +46,7 @@ function load_apple(){
                                 '<p>Price: <strong> $'+apple[i].price+'</strong></p>'+
                             '</div>'+
                             '<div class = "tool-div"> <span><a class="btn btn-success atc" id="" '+
-                                'href="/ShoppingWeb20172/assets/process/add-to-cart.php'+
+                                'href="/ShoppingWeb20172/assets/process/add-to-cart-directly.php'+
                                 '?id='+apple[i].proId+
                                 '&name='+apple[i].proName+
                                 '&price='+apple[i].price+'">Add to cart</a>'+
@@ -77,7 +77,7 @@ function load_other(){
                                 '<p>Price: <strong> $'+other[i].price+'</strong></p>'+
                             '</div>'+
                             '<div class = "tool-div"> <span><a class="btn btn-success atc" id="" '+
-                                'href="/ShoppingWeb20172/assets/process/add-to-cart.php'+
+                                'href="/ShoppingWeb20172/assets/process/add-to-cart-directly.php'+
                                 '?id='+other[i].proId+
                                 '&name='+other[i].proName+
                                 '&price='+other[i].price+'">Add to cart</a>'+

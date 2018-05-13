@@ -14,11 +14,19 @@
                 </ul>
                 <div>
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
+                        <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">'.$_SESSION['name'].'
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                <li><a href="#">HTML</a></li>
+                                <li><a href="#">CSS</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                                <li class="divider"></li>
+                                <li id="logout"><a><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+                                </ul>
                         </li>
-                        <li id="acount"><a><span>Hello,'.$_SESSION['userName'].'</span></a></li>
                         <li id="cart"><a href="/ShoppingWeb20172/view/showcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
-                        <li id="logout"><a><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+                        <li><a id="weightcart"></a></li>
                     </ul>
                 </div>
             </div>

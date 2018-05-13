@@ -1,11 +1,17 @@
 <?php
 session_start();
+include 'connection.php';
+
 if(isset($_SESSION['userName'])){
+
     $id = $_POST['id'];
     $quantity = $_POST['quantity'];
     $response = array("error"=>0);
-    array_push($response,array("id"=>$id,"quantity"=>$quantity));
-    
+    $userId = $_SESSION['id'];
+    // Add to database
+    $sql = "INSERT INTO cart(proId,userId,quantity) VALUES($id,$userId,$quantity)";
+    $
+    // response to js
     $file = json_encode($response);
     echo $file;
 } else {
