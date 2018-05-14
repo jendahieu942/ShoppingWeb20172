@@ -4,6 +4,7 @@ $(document).ready(function () {
         "Samsung Galaxy A3","Samsung Galaxy A5", "Samsung Galaxy A7", "Samsung Galaxy A8", "Samsung Galaxy S5", "Samsung Galaxy S6",
         "Samsung Galaxy S7", "Samsung Galaxy S8", "Samsung Galaxy S9", "Samsung Galaxy J2", "Samsung Galaxy J3","Samsung Galaxy J4",
         "Samsung Galaxy J5","Samsung Galaxy J7", "Samsung Galaxy J8", "Samsung Galaxy Y", "Samsung Galaxy Note",
+        "Huawei", "Vivo", "OPPO",
     ];
     $("#textsearch").autocomplete({
         source: searchtags,

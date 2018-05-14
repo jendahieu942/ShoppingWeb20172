@@ -18,9 +18,8 @@
                                 <a class="dropdown-toggle" data-toggle="dropdown">'.$_SESSION['name'].'
                                 <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="#">HTML</a></li>
-                                <li><a href="#">CSS</a></li>
-                                <li><a href="#">JavaScript</a></li>
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Purchased</a></li>
                                 <li class="divider"></li>
                                 <li id="logout"><a><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
                                 </ul>
