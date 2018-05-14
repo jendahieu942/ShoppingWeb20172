@@ -1,29 +1,7 @@
 <?php
-//session_start();
-$server = "localhost";
-$user   = "root";
-$pass   = "12345";
-$dbname = "shoppingweb";
-$data = array();
-
-$connect = new mysqli($server,$user,$pass,$dbname);
-if ($connect->connect_error) {
-    die("Connection failed: ".$connect->connect_error);
-} else {
-    $sqlcmd = "SELECT * FROM `user` where userId='1';";
-    $result = mysqli_query($connect,$sqlcmd);
-//    echo var_dump($result);
-
-    while($row = mysqli_fetch_assoc($result))
-    {
-        array_push($data,$row);
-    }
-//    echo var_dump($data);
-//    echo $data[0]['email'];
-}
-mysqli_close($connect);
+session_start();
+if(isset($_SESSION['userName'])):
 ?>
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -33,9 +11,9 @@ mysqli_close($connect);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/ShoppingWeb20172/assets/css/style.css">
-    <title>userProFile</title>
+    <title>User's Profile Page</title>
     <style>
-        input.hidden {
+        .input.hidden {
             position: absolute;
             left: -9999px;
         }
@@ -52,62 +30,58 @@ mysqli_close($connect);
 </head>
 <body>
 <!--    <div>-->
-    <?php include '../view/navbar.php'; ?>
+<?php include '../view/navbar.php'; ?>
     <div class="container" style="width: 172%">
         <div class="row">
             <div class="col-md-7 ">
 
                 <div class="panel panel-default">
-                    <div class="panel-heading">  <center><h2>Hồ sơ cá nhân </h2></h4></center></div>
+                    <div class="panel-heading">
+                        <center>
+                            <h2> User's Profile </h2>
+                        </center>
+                    </div>
                     <div class="panel-body">
-
                         <div class="box box-info">
-
                             <div class="box-body">
-                                <div class="col-sm-6">
-                                    <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
 
+                                <div class="col-sm-12">
+                                    <div align="center">
+                                        <img class="img-circle img-responsive" alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" >
                                         <input id="profile-image-upload" class="hidden" type="file">
-                                        <div style="color:#999;" >Click để thay đổi ảnh đại diện</div>
+                                        <div style="color:#999;" >Click to change avatar</div>
                                         <!--Upload Image Js And Css-->
                                     </div>
-
-                                    <br>
-
-                                    <!-- /input-group -->
+                                    <br/><br/><hr/>
                                 </div>
-                                <div class="col-sm-6">
-                                    <h2 style="color:#00b1b1;"><?php echo $data[0]['firstName']; ?> <?php echo $data[0]['lastName']; ?></h2></span>
-                                    <span><p></p></span>
-                                </div>
-                                <div class="clearfix"></div>
-                                <hr style="margin:5px 0 5px 0;">
 
 
-                                <div class="col-sm-5 col-xs-6 tital " >User Name login</div><div class="col-sm-7 col-xs-6 ">: <?php echo $data[0]['userName']; ?></div>
+                                <div class="col-sm-5 col-xs-6 tital " >User Name login</div>
+                                <div class="col-sm-7 col-xs-6 " id= "userName"></div>
                                 <div class="clearfix"></div>
                                 <div class="bot-border"></div>
 
-                                <div class="col-sm-5 col-xs-6 tital " >First Name</div><div class="col-sm-7">: <?php echo $data[0]['firstName']; ?></div>
+                                <div class="col-sm-5 col-xs-6 tital " >First Name</div>
+                                <div class="col-sm-7" id="firstName"></div>
                                 <div class="clearfix"></div>
                                 <div class="bot-border"></div>
 
-                                <div class="col-sm-5 col-xs-6 tital " >Last Name</div><div class="col-sm-7">: <?php echo $data[0]['lastName']; ?></div>
+                                <div class="col-sm-5 col-xs-6 tital " >Last Name</div>
+                                <div class="col-sm-7" id="lastName"></div>
                                 <div class="clearfix"></div>
                                 <div class="bot-border"></div>
 
-                                <div class="col-sm-5 col-xs-6 tital " >Email</div><div class="col-sm-7">: <?php echo $data[0]['email']; ?></div>
-
-                                <div class="clearfix"></div>
-                                <div class="bot-border"></div>
-
-                                <div class="col-sm-5 col-xs-6 tital " >Phone Number</div><div class="col-sm-7">: <?php echo $data[0]['phoneNumber']; ?></div>
+                                <div class="col-sm-5 col-xs-6 tital " >Email</div>
+                                <div class="col-sm-7" id="email"></div>
 
                                 <div class="clearfix"></div>
                                 <div class="bot-border"></div>
 
+                                <div class="col-sm-5 col-xs-6 tital " >Phone Number</div>
+                                <div class="col-sm-7" id="phone"></div>
 
-
+                                <div class="clearfix"></div>
+                                <div class="bot-border"></div>
                                 <!-- /.box-body -->
                             </div>
                             <!-- /.box -->
@@ -127,8 +101,14 @@ mysqli_close($connect);
             </script>
         </div>
     </div>
-    </div>
+</div>
+<script src="/ShoppingWeb20172/assets/js/logout.js"></script>
+<script src="/ShoppingWeb20172/assets/js/show-products.js"></script>
 </body>
 </html>
 
-
+<?php
+else: 
+    header('location: /ShoppingWeb20172/login.php');
+endif;
+?>

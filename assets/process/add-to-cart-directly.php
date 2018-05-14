@@ -16,11 +16,19 @@ if(isset($_SESSION['userName'])){
         $uResult = mysqli_query($conn,$updateSQL);
         if(mysqli_num_rows($uResult) > 0){
             echo "Added successfull<br/>";
-            echo "<br/>Directing to home page";
+            echo "<br/>Directing to home page . . .";
             header('location: /ShoppingWeb20172/index.php');
         }
     } else {
-        echo "Chua mua sp nay";
+        $sql = "INSERT INTO cart(proId, userId, quantity) VALUES('$proId','$userId',1)";
+        $result = mysqli_query($conn,$sql);
+        echo $sql."<br/>";
+        echo "Added product to your cart";
+        echo "<br/>Directing to home page . . .";
+        echo "<script language='javascript'>";
+        echo "alert('Added product sucessfull')";
+        echo "</script>";
+        header('location: /ShoppingWeb20172/index.php');
     }
 } else {
     sleep(1);

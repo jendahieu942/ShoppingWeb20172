@@ -43,3 +43,19 @@
     position: absolute;
     bottom: 15px;
 }
+
+.num-cart {
+    position: absolute;
+    background: #e97f07;
+    color: #ffffff;
+    top: 5px;
+    font-weight: 400;
+    right: 3px;
+    text-align: center;
+    border: 1px solid #e97f07;
+    font-size: 14px;
+    min-width: 18px;
+    line-height: 16px;
+    border-radius: 50%;
+    display: block;
+}

@@ -18,14 +18,19 @@
                                 <a class="dropdown-toggle" data-toggle="dropdown">'.$_SESSION['name'].'
                                 <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                <li><a href="#">Profile</a></li>
+                                <li><a href="/ShoppingWeb20172/view/userProfile.php">Profile</a></li>
                                 <li><a href="#">Purchased</a></li>
                                 <li class="divider"></li>
                                 <li id="logout"><a><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
                                 </ul>
                         </li>
-                        <li id="cart"><a href="/ShoppingWeb20172/view/showcart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart </a></li>
-                        <li><a id="weightcart"></a></li>
+                        <li id="cart">
+                            <a href="/ShoppingWeb20172/view/showcart.php">
+                                <span class="glyphicon glyphicon-shopping-cart" style="font-size:18px;"></span>
+                                <span class="num-cart" id="weight-cart">0<span>
+                            </a>
+                        </li>
+                        <li><a></a></li>
                     </ul>
                 </div>
             </div>
@@ -49,7 +54,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                         </li>
-                        <li id="login"><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li id="login"><a href="/ShoppingWeb20172/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
             </div>

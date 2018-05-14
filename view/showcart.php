@@ -22,7 +22,7 @@ if(isset($_SESSION['userName'])):
 <div class="col-md-9" style="width: 200%">
     <div class="row" >
         <div class="col-sm-6 col-md-6">
-            <h3>Danh sách sản phẩm đã thêm vào giỏ hàng</h3>
+            <h3><center>List product in your cart</center></h3>
             <table class="table table-hover" style="size: 1000px">
                 <tr>
                     <th>#</th>
@@ -40,6 +40,7 @@ if(isset($_SESSION['userName'])):
 </div>
 <!-- Javascript file-->
 <script src="/ShoppingWeb20172/assets/js/logout.js"></script>
+<script src="/ShoppingWeb20172/assets/js/show-products.js"></script>
 </body>
 </html>
 <?php

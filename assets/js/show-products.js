@@ -92,10 +92,21 @@ function load_other(){
     });
 }
 
+function update_cart() {
+    $.ajax({
+        type: 'POST',
+        url: '/ShoppingWeb20172/assets/process/update_cart.php',
+        data: null,
+        success: function (data) {
+            $("#weight-cart").text(data);
+        }
+    });
+}
 function show_product() {
     load_apple();
     load_samsung();
     load_other();
+    update_cart();
 }
 
 window.onload = show_product;
