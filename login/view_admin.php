@@ -1,146 +1,15 @@
-
 <?php
-	if(isset($_POST["insert_product"])){
-		header("location: ../adminShoppingWeb.php");
-	}
-	$pass="12345";
-	$db=mysqli_connect("localhost","root",$pass,"shoppingweb");
-	$sql="select distinct supplier from product";
-	$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
-	if($result!=null){
-		while($row=mysqli_fetch_array($result)){
-			$supplier=$row["supplier"];
-			if(isset($_POST[$supplier])){
-				$_SESSION["supplier"]=$supplier;
-				mysqli_close($db);
-				$db=mysqli_connect("localhost","root",$pass,"shoppingweb");
-				$sql="select * from product where supplier='$supplier'";
-				$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
-				if($result!=null){
-					echo "<table id='viewproduct' class='table'><tr><td>NAME</td><td>SUPPLIER</td><td>DESCRIPTION</td><td>PRICE</td><td>QUANTITY</td><td>EDIT</td></tr>";
-						while($row1=mysqli_fetch_array($result)){
-							$id=$row1['proId'];
-							$name=$row1['proName'];
-							$supplier=$row1['supplier'];
-							$des=$row1['srcSolution'];
-							$price=$row1['price'];
-							$quantity=$row1['quantity'];
-							echo "<tr><td>$name</td><td>$supplier</td><td>$des</td><td>$price</td><td>$quantity</td><td><form action='admin.php' method='post' class='form-group'><input type='text' name='new_price_$id' value='$price' placeholder='new price' class='form-control' style='width:100px'>
-								<input type='text' name='new_quan_$id' value='$quantity' placeholder='new quantity' class='form-control' style='width:100px'><input type='submit' name='edit_$id' value='edit' class='form-control' style='width:100px'></tr>";
-						}
-						echo "</table>";
-						mysqli_close($db);
+				if(isset($_POST['insert_supplier'])){
+					echo "<form action='admin.php' method='post' id='form_insert_sup'  role='form' onsubmit='return insert_sup()' >
+								<h3>ADD SUPPLIER</h3>
+								<p>ID Supplier:</p><input type='text' name='id' id='idsupplier'>
+								<p id='error_id'></p>
+								<p>Name Supplier:</p><input type='text' name='name' id='namesup'>
+								<p id='error_name'></p>
+								<br><input type='submit' name='submit_sup' value='FINISH'>
+							</form>";
 				}else{
-					mysqli_close($db);
-					echo "no product";
-				}
-			}
-		}
-		$pass="12345";
-		$db=mysqli_connect("localhost","root",$pass,"shoppingweb");
-				$sql="select * from product";
-				$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
-				while($result && $row=mysqli_fetch_array($result)){
-					$id="edit_".$row['proId'];
-					$proid=$row['proId'];
-					if(isset($_POST["$id"])){
-						mysqli_close($db);
-						$db=mysqli_connect("localhost","root",$pass,"shoppingweb");
-						$quan=$_POST["new_quan_$proid"];
-						$price=$_POST["new_price_$proid"];
-						$sql2="update product set quantity='$quan',price='$price' where proId='$proid'";
-						mysqli_query($db,$sql2,MYSQLI_USE_RESULT);
-						mysqli_close($db);
-				$db=mysqli_connect("localhost","root",$pass,"shoppingweb");
-				$supplier=$_SESSION["supplier"];
-				$sql="select * from product where supplier='$supplier'";
-				$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
-				if($result!=null){
-					echo "<table id='viewproduct' class='table'><tr><td>NAME</td><td>SUPPLIER</td><td>DESCRIPTION</td><td>PRICE</td><td>QUANTITY</td><td>EDIT</td></tr>";
-						while($row1=mysqli_fetch_array($result)){
-							$id=$row1['proId'];
-							$name=$row1['proName'];
-							$supplier=$row1['supplier'];
-							$des=$row1['srcSolution'];
-							$price=$row1['price'];
-							$quantity=$row1['quantity'];
-							echo "<tr><td>$name</td><td>$supplier</td><td>$des</td><td>$price</td><td>$quantity</td><td><form action='admin.php' method='post' class='form-group'><input type='text' name='new_price_$id' value='$price' placeholder='new price' class='form-control' style='width:100px'>
-								<input type='text' name='new_quan_$id' value='$quantity' placeholder='new quantity' class='form-control' style='width:100px'><input type='submit' name='edit_$id' value='edit' class='form-control' style='width:100px'></tr>";
-						}
-						echo "</table>";
-						mysqli_close($db);
-				}else{
-					mysqli_close($db);
-					echo "no product";
-				}
-					}
-				}
-				function show($result){
-					echo "<table id='viewbill' class='table table-striped'><tr><td><b>PRODUCT</b></td><td><b>USERNAME</b></td><td><b>QUANTITY</b></td><td><b>PAIDDATE</b></td></tr>";
-					if($result!=null){
-					while($row=mysqli_fetch_array($result)){
-						$proname=$row['proName'];
-						$username=$row['userName'];
-						$quantity=$row['quantity'];
-						$paiddate=$row['paidDate'];
-						echo "<tr><td>$proname</td><td>$username</td><td>$quantity</td><td>$paiddate</td></tr>";
-					}
-					echo "</table>";
-					}
-				}
-				if(isset($_POST["thang"])){
-					$pass="12345";
-					$db=mysqli_connect("localhost","root",$pass,"shoppingweb");
-					$sql="select proName,userName,bill.quantity,paidDate from bill,product,user where bill.userId=user.userId and bill.proId=product.proId and Month(paidDate)=Month( CURDATE()) and year(paidDate)=year(CURDATE()) ";
-					$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
-					if($result==NULL){
-						echo "no bill this month";
-					}else{
-						show($result);
-					}
-					mysqli_close($db);
-				}
-				if(isset($_POST["ngay"])){
-					$pass="12345";
-					$db=mysqli_connect("localhost","root",$pass,"shoppingweb");
-					$sql="select proName,userName,bill.quantity,paidDate from bill,product,user where bill.userId=user.userId and bill.proId=product.proId and Day(paidDate)=Day(CURDATE()) and Month(paidDate)=Month( CURDATE()) and year(paidDate)=year(CURDATE()) ";
-					$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
-					if($result==NULL){
-						echo "no bill today";
-					}else{
-						show($result);
-					}
-					mysqli_close($db);
-				}
-				if(isset($_POST["nam"])){
-					$pass="12345";
-					$db=mysqli_connect("localhost","root",$pass,"shoppingweb");
-					$sql="select proName,userName,bill.quantity,paidDate from bill,product,user where bill.userId=user.userId and bill.proId=product.proId and year(paidDate)=year(CURDATE())";
-					$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
-					if($result==NULL){
-						echo "no bill this year";
-					}else{
-						show($result);
-					}
-					mysqli_close($db);
-				}
-				if(isset($_POST["all"])){
-					$pass="12345";
-					$db=mysqli_connect("localhost","root",$pass,"shoppingweb");
-					$sql="select proName,userName,bill.quantity,paidDate from bill,product,user where bill.userId=user.userId and bill.proId=product.proId group by bill.paidDate,bill.quantity,userName,proName";
-					$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
-					if($result==NULL){
-						echo "no bill";
-					}else{
-						show($result);
-					}
-					mysqli_close($db);
-				}
-
-	}
-//	if(isset($_SESSION["supplier"]))
-?>
-<!--if(isset($_POST['insert_product'])){
+					if(isset($_POST['insert_product'])){
 					$db=mysqli_connect("localhost","root","","shoppingweb");
 					$sql="select * from supplier order by namesupplier";
 					$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
@@ -168,7 +37,9 @@
 						mysqli_close($db);
 
 				}else{
-				
+				$db=mysqli_connect("localhost","root","","shoppingweb");
+				$sql="select * from supplier";
+				$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
 				while($result && $row=mysqli_fetch_array($result)){
 					$id=$row['idsupplier'];
 					if(isset($_POST["$id"])){
@@ -209,4 +80,5 @@
 						mysqli_query($db1,$sql2);
 					}
 				}
-				} -!>
+				}}	
+			?>

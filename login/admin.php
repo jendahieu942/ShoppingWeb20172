@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head><?php session_start(); ?>
-
+<head>
 	<title>Admin</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		#cover{
-			height: 950px;
+			height: 800px;
 			width: 1200px;
 			background-color: #99ff99;
 			margin-right: auto;
@@ -32,43 +27,39 @@
 		}
 		#yeucau{
 			width: 300px;
-			display: inline-flex;
+			display: inline-block;
 		}
 		#view{
 			width: 850px;
-			height: 800px;
-			display: inline-flex;
+			display: inline-block;
 			background-color: white;
-			overflow: scroll;
-		}
-		#viewproduct tr td form input{
-			width:100px;
 		}
 	</style>
+	<?php 
+		include "header_admin.php";
+	?>
 </head>
 <body>
 	<div id="cover">
 		<h1>ADMIN PAGE</h1>
 		<div id="yeucau">
-			<form action="admin.php" method="post" class='form-group'>
-				<h3>VIEW PRODUCT</h3>
-				<input type="submit" name="Apple" value="APPLE" class='form-control'><br>
-				<input type="submit" name="Huawei" value="HUAWEI" class='form-control'><br>
-				<input type="submit" name="OPPO" value="OPPO" class='form-control'><br>
-				<input type="submit" name="Samsung" value="SAMSUNG" class='form-control'><br>
-				<input type="submit" name="Vivo" value="VIVO" class='form-control'><br>
-				<input type="submit" name="Xiaomi" value="XIAOMI" class='form-control'><br>
-				<h3>ADD PRODUCT</h3>
-				<input type="submit" name="insert_product" value="ADD PRODUCT" class='form-control'><br>
-				<h3>VIEW BILL</h3>
-				<input type="submit" name="ngay" value="TODAY" class='form-control'><br>
-				<input type="submit" name="thang" value="THIS MONTH" class='form-control'><br>
-				<input type="submit" name="nam" value="THIS YEAR" class='form-control'><br>
-				<input type="submit" name="all" value="ALL" class='form-control'><br>
+			<form action="admin.php" method="post">
+				<?php
+					$db=mysqli_connect("localhost","root","","shoppingweb");
+					$sql="select * from supplier order by namesupplier";
+					$result=mysqli_query($db,$sql,MYSQLI_USE_RESULT);
+					while($row=mysqli_fetch_array($result)){
+						$id=$row['idsupplier'];
+						$name=$row['namesupplier'];
+						echo "<input type='submit' name='$id' value='$name'><br>";
+					}
+					mysqli_close($db);
+				?>
+				<input type="submit" name="insert_supplier" value="ADD SUPPLIER"><br>
+				<input type="submit" name="insert_product" value="ADD PRODUCT"><br>
 			</form>
 		</div>
 		<div id="view">
-			<br>
 			<?php
 				include "view_admin.php";
 			?>
