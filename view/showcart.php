@@ -19,30 +19,6 @@ if(isset($_SESSION['userName'])):
     include 'navbar.php';
 ?>
 <!-- Main view-->
-<?php
-
-$server = "localhost";
-$user   = "root";
-$pass   = "12345";
-$dbname = "shoppingweb";
-$data = array();
-
-$connect = new mysqli($server,$user,$pass,$dbname);
-if ($connect->connect_error) {
-    die("Connection failed: ".$connect->connect_error);
-} else {
-    $sqlcmd = "select product.img, proName, product.price, cart.quantity  FROM cart, product, user WHERE product.proId = cart.proId AND user.userId = cart.userId AND user.userId = 6";
-    $result = mysqli_query($connect,$sqlcmd);
-
-    while($row = mysqli_fetch_assoc($result))
-    {
-        array_push($data,$row);
-    }
-
-}
-mysqli_close($connect);
-?>
-
 <div class="col-md-9" style="width: 200%">
     <div class="row" >
         <div class="col-sm-6 col-md-6">
@@ -57,46 +33,8 @@ mysqli_close($connect);
                     <th>Amount</th>
                     <th>Modify</th>
                 </tr>
-                <?php
-                if (!empty($data)){
-                    $i =0;
-                    foreach ($data as $key => $value){
-                        ?>
-                        <tr>
-                            <td>
-                                <?php echo $i ?>
-                            </td>
-                            <td>
-                                <?php $a = "../".$data[$key]['img']; ?>
-                                <?php echo "<img src=$a alt='anh dien thoai' style='height: 50px'>" ?>
-                            </td>
-                            <td>
-                                <?php echo $data[$key]['proName'] ?>
-                            </td>
-                            <td>
-                                <?php echo $data[$key]["price"] ; ?>
-                            </td>
-                            <td>
-                                <input name="sl_<?php echo $key; ?>" id="sl_<?php echo $key; ?>" value="<?php echo $data[$key]['quantity'] ?>">
-                                <a href="javascrip:void(0)" onclick="updateItem(<?php echo $key; ?>)">update</a>
-                                <a href="javascrip:void(0)" onclick="deleteItem(<?php echo $key; ?>)" style="color: red">delete</a>
-                            </td>
-                            <td><?php echo ($data[$key]['price']) * ($data[$key]['quantity']) ?></td>
-                        </tr>
-                        <?php
-                        $i++;
-                    }
-                }
-                ?>
-            </table>
-            <script>
-                function updateItem(id) {
-                    alert("id: " + id);
-                }
-                function deleteItem(id) {
-                    alert("id: "+id);
-                }
-            </script>
+                <div id="resultcart"></div>
+            </tabel>
         </div>
     </div>
 </div>

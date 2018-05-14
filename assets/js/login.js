@@ -6,8 +6,10 @@ $(document).ready(function(){
             url: '/ShoppingWeb20172/assets/process/login-process.php',
             data: $(this).serialize(),
             success: function (data) {
-                if(data == 1){
-                    window.location = "/ShoppingWeb20172/index.php";
+                data = JSON.parse(data);
+                console.log(data);
+                if(data.ok){
+                    window.location = data.ok;
                 } else {
                     alert("FAILED: User or password was not corrected");
                 }

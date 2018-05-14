@@ -26,10 +26,16 @@ if(isset($_POST['username'])){
             $_SESSION['userName'] = $username;
             $_SESSION['name'] = $fname." ".$lname;
         }
-        echo 1;
+        if(isset($_SESSION['previouspage'])){
+            $previous = $_SESSION['previouspage'];
+        }else {
+            $previous = "/ShoppingWeb20172/index.php";
+        }
+        $data = array("ok"=>$previous);
+        echo json_encode($data);
     }
     else {
-        echo "failed";
+        echo json_encode(array("fail"=>"False"));
     }
 }
 ?>   

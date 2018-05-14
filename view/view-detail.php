@@ -24,6 +24,7 @@ if(isset($_GET['id'])){
 
     }
 mysqli_close($conn);
+$_SESSION['previouspage'] = $_SERVER['REQUEST_URI'];
 }
 ?>
 <!DOCTYPE html>

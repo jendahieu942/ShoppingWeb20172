@@ -10,7 +10,6 @@ $(document).ready(function () {
             data: postdata,
             success: function (data) {
                 data = JSON.parse(data);
-                console.log(data);
                 if(data.error == 1){
                     window.location.href = "/ShoppingWeb20172/login.php";
                 } else {
