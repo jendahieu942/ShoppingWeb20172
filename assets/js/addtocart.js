@@ -11,7 +11,7 @@ $(document).ready(function () {
             success: function (data) {
                 data = JSON.parse(data);
                 if(data.error == 1){
-                    window.location.href = "/ShoppingWeb20172/login.php";
+                    window.location.href = "/ShoppingWeb20172/view/login.php";
                 } else {
                     alert("Added product to your cart successful");
                 }

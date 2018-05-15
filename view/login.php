@@ -46,13 +46,13 @@
                             </div>
                             <hr/>
                             <p>Do not have account? <a href="signup.php"> Sign Up</a></p>
-                            <p>View product without login? <a href="index.php">Home page</a></p>
+                            <p>View product without login? <a href="../index.php">Home page</a></p>
                             <input class='form-control btn-success' type ='submit' id="login_btn" name="login-btn" value = "Log In">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-<script src="assets/js/login.js"></script>
+<script src="/ShoppingWeb20172/assets/js/login.js"></script>
 </body>
 </html>

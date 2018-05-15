@@ -69,7 +69,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                             </li>
-                            <li id="login"><a href="/ShoppingWeb20172/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            <li id="login"><a href="/ShoppingWeb20172/view/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         </ul>
                     </div>
                 </div>

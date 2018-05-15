@@ -109,6 +109,6 @@ if(isset($_SESSION['userName'])):
 
 <?php
 else: 
-    header('location: /ShoppingWeb20172/login.php');
+    header('location: /ShoppingWeb20172/view/login.php');
 endif;
 ?>

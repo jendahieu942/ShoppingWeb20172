@@ -45,6 +45,6 @@ if(isset($_SESSION['userName'])):
 <?php
 else:
     $_SESSION['previouspage'] = $_SERVER['REQUEST_URI'];
-    header('Location: /ShoppingWeb20172/login.php');
+    header('Location: /ShoppingWeb20172/view/login.php');
 endif;
 ?>
