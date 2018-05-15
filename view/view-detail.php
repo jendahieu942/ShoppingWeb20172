@@ -78,23 +78,19 @@ $_SESSION['previouspage'] = $_SERVER['REQUEST_URI'];
         </div>
         <div class = "col-md-9" id = "info-product">
             <ul class="list-group">
-            <li class="list-group-item"><strong>Supplier: </strong><?php echo $sup;?></li>
             <li class="list-group-item">
-                <table>
-                    <?php 
-                    foreach ($scr as $key => $value) {
-                        echo "<tr>";
-                        foreach ($value as $nkey => $nvalue) {
-                            echo "<th width=50% style='border-bottom: 1px dotted #b6c0c4;'>".$nkey."</th>";
-                            echo "<td style='border-bottom: 1px dotted #b6c0c4;text-align:left'>".$nvalue."</td>";
-                        }
-                        echo "</tr>";
-                    }
-                    ?>
-                </table>
+                <strong>SUPPLIER: </strong>
+                <span style="margin-left: 200px;"><?php echo $sup;?></span>
             </li>
-            <li class="list-group-item"><strong>Storage: </strong><?php echo $storage;?></li>
-            <li class="list-group-item"><strong>Price: $ <?php echo $price;?></strong></li>
+
+            <li class="list-group-item">
+                <?php   foreach ($scr as $key => $value):?>
+                    
+                <?php   endforeach;?>
+            </li>
+
+            <li class="list-group-item"><strong>STORAGE: </strong><?php echo $storage;?></li>
+            <li class="list-group-item"><strong>PRICE: $ <?php echo $price;?></strong></li>
             </ul>
             <span>
             <input id="quantity" idproduct=<?=$id?> type="number" value=1 min=1>
@@ -106,6 +102,7 @@ $_SESSION['previouspage'] = $_SERVER['REQUEST_URI'];
 </div>
 <!-- Javascript file-->
 <script src="/ShoppingWeb20172/assets/js/logout.js"></script>
+<script src="/ShoppingWeb20172/assets/js/show-products.js"></script>
 <script src="/ShoppingWeb20172/assets/js/addtocart.js"></script>
 </body>
 </html>
