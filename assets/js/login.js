@@ -1,4 +1,20 @@
 $(document).ready(function(){
+    var passlength = 0;
+    var userlength = 0;
+    $("#username").keyup(function (event) {
+        event.preventDefault();
+        if($('#username').val()=="" || $('#username').val().length != userlength){
+            $('#error').hide();            
+        }
+    });
+
+    $("#password").keyup(function (event) {
+        event.preventDefault();
+        if($('#password').val()=="" || $('#password').val().length != passlength){
+            $('#error').hide();            
+        }
+    });
+
     $('#loginform').submit( function(event) {
         event.preventDefault();
         $.ajax({
@@ -11,8 +27,13 @@ $(document).ready(function(){
                 if(data.ok){
                     window.location = data.ok;
                 } else {
-                    alert("FAILED: User or password was not corrected");
-                }
+                    passlength = $('#password').val().length;
+                    userlength = $('#username').val().length;
+                    $('#error').show();
+                    $('#error').addClass("alert alert-danger");
+                    $('#error').html("<strong>Error:</strong><span>User or password was not corrected</span>");
+                    $("#password").select();
+                }   
             }
         })
     }); 

@@ -67,6 +67,7 @@ $(document).ready(function () {
                     $("#apple").html(ipString);
                     $("#samsung").html(ssString);
                     $("#other").html(cnString);
+                    $(".pagination").empty();
                     if(ipString == ""){
                         $("#apple").empty();
                     }
@@ -74,7 +75,7 @@ $(document).ready(function () {
                         $("#samsung").empty();
                     }
                     if(cnString == ""){
-                        $("#other").empty();
+                        $("#other").empty();    
                     }
                 }
             }

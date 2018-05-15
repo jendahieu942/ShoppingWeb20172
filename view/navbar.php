@@ -17,7 +17,7 @@
                         <li'?> <?php echo (strlen($_SERVER['REQUEST_URI'])===27) ? "class='active'" : "";?> <?php echo '><a href="/ShoppingWeb20172/index.php">Home</a></li>
                         <li><a href="/ShoppingWeb20172/index.php#apple">Apple</a></li>
                         <li><a href="/ShoppingWeb20172/index.php#samsung">Samsung</a></li>
-                        <li><a href="/ShoppingWeb20172/index.php">Other</a></li>
+                        <li><a href="/ShoppingWeb20172/index.php#other">Other</a></li>
                     </ul>
                     <div>
                         <ul class="nav navbar-nav navbar-right">
@@ -63,7 +63,7 @@
                         <li'?> <?php echo (strlen($_SERVER['REQUEST_URI'])===27) ? "class='active'" : "";?> <?php echo '><a href="/ShoppingWeb20172/index.php">Home</a></li>
                         <li><a href="/ShoppingWeb20172/index.php#apple">Apple</a></li>
                         <li><a href="/ShoppingWeb20172/index.php#samsung">Samsung</a></li>
-                        <li><a href="/ShoppingWeb20172/index.php">Other</a></li>
+                        <li><a href="/ShoppingWeb20172/index.php#other">Other</a></li>
                     </ul>
                     <div>
                         <ul class="nav navbar-nav navbar-right">

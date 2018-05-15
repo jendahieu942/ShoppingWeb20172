@@ -12,6 +12,15 @@ if(isset($_SESSION['userName'])):
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Show cart Page - G13MobileShop</title>
     <link rel="stylesheet" href="/ShoppingWeb20172/assets/css/style.css">
+    <style>
+        td{
+            position: relative;
+        }
+        td p{
+            position: absolute;
+            top: 35%;
+        }
+    </style>
 </head>
 <body>
 <!--Nav bar-->

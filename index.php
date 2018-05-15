@@ -88,32 +88,68 @@ session_start();
             </div>
             <div>
                 <ol class="breadcrumb" id="apple-bar">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="javascript:void(0)">Home</a></li>
                     <li class="active">Apple</li>
                 </ol>
             </div>
-            <div class="flex-container" id ="apple">
-                        <!--Here display mobile info receive from PHP server-->
+            
+            <div class = "product-page papple">
+                <div class="flex-container" id ="apple">
+                            <!--Here display mobile info receive from PHP server-->
+                </div>
+                <div class="text-center">
+                    <ul class="pagination iPage" style="margin-top: 0px;margin-bottom:0px;">
+                        <li id="iprevious-page" class="disabled">
+                        <a href="javascript:void(0)" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
+            <br/>
             <div>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="javascript:void(0)">Home</a></li>
                     <li class="active">SamSung</li>
                 </ol>
             </div>
-            <div class="flex-container" id ="samsung">
-                    <!--Here display mobile info receive from PHP server-->
-            </div>
+            <div class="product-page psamsung">
+                <div class="flex-container" id ="samsung">
+                        <!--Here display mobile info receive from PHP server-->
+                </div>
+                <div class="text-center">
+                    <ul class="pagination sPage" style="margin-top: 0px;margin-bottom:0px;">
+                        <li id="sprevious-page" class="disabled">
+                        <a href="javascript:void(0)" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>            
 
+            <br/>
             <div>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="javascript:void(0)">Home</a></li>
                     <li class="active">China</li>
                 </ol>
             </div>
-            <div class="flex-container" id ="other">
-                    <!--Here display mobile info receive from PHP server-->
+            <div class="product-page pother">
+                <div class="flex-container" id ="other">
+                        <!--Here display mobile info receive from PHP server-->
+                </div>
+                <div class="text-center">
+                    <ul class="pagination oPage" style="margin-top: 0px;margin-bottom:0px;">
+                        <li id="oprevious-page" class="disabled">
+                        <a href="javascript:void(0)" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -122,8 +158,8 @@ session_start();
 <!-- Javascript file-->
 <script type="text/javascript" src="assets/js/logout.js"></script>
 <script type="text/javascript" src="assets/js/signup.js"></script>
-<script type="text/javascript" src="assets/js/show-products.js"></script>
 <script type="text/javascript" src="assets/js/search.js"></script>
 <script type="text/javascript" src="assets/js/left-list-click.js"></script>
+<script type="text/javascript" src="assets/js/show-products.js"></script>
 </body>
 </html>

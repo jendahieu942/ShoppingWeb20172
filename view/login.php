@@ -30,10 +30,6 @@
                 <!--Modal body-->
                 <div class="modal-body">
                     <form id="loginform" method="POST">
-                        <!-- json response will be here-->
-                        <div id="result"></div>
-                        <!-- json response will be above-->
-                        <br/>
                         <div class="modal-group">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -44,6 +40,7 @@
                                 <span class="input-group-addon"><i class="	glyphicon glyphicon-lock"></i></span>
                                 <input class="form-control" type="password" name="password" id="password" required placeholder="Password">
                             </div>
+                            <div id="error"></div>
                             <hr/>
                             <p>Do not have account? <a href="signup.php"> Sign Up</a></p>
                             <p>View product without login? <a href="../index.php">Home page</a></p>
