@@ -41,7 +41,9 @@ $(document).ready(function () {
                         htmlString = '<div class="product-box">'+
                                         '<img class="resize" src="'+element.img+'">'+
                                         '<div class="caption">'+
-                                            '<h4><a href="#">'+element.proName+'</a></h4>'+
+                                            '<h4><a href="view/view-detail.php'+
+                                            '?id='+element.proId+
+                                            '">'+element.proName+'</a></h4>'+
                                             '<p>Price: <strong> $'+element.price+'</strong></p>'+
                                         '</div>'+
                                         '<div class = "tool-div"> <span><a class="btn btn-success atc" id="" '+

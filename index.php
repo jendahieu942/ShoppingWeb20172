@@ -47,19 +47,19 @@ session_start();
                 <a class="list-group-item list-group-item-success"><b>SamSung</b></a>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="#">Galaxy A series</a>
+                        <a id="galaxyA">Galaxy A series</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#">Galaxy S series</a>
+                        <a id="galaxyS">Galaxy S series</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#">Galaxy J series</a>
+                        <a id="galaxyJ">Galaxy J series</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#">Galaxy Y series</a>
+                        <a id="galaxyY">Galaxy Y series</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#">Galaxy Note series</a>
+                        <a id="galaxyNote">Galaxy Note series</a>
                     </li>
                 </ul>
             </div>
@@ -68,16 +68,16 @@ session_start();
                 <a class="list-group-item list-group-item-warning"><b>China Mobile</b></a>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="#">Oppo</a>
+                        <a id="oppo">Oppo</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#">Xiaomi</a>
+                        <a id="xiaomi">Xiaomi</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#">Huawei</a>
+                        <a id="huawei">Huawei</a>
                     </li>
                     <li class="list-group-item">
-                        <a href="#">Vivo</a>
+                        <a id="vivo">Vivo</a>
                     </li>
                 </ul>
             </div>
