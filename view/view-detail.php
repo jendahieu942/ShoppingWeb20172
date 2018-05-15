@@ -1,6 +1,5 @@
 <?php
 session_start();
-sleep(1);
 include_once '../assets/process/connection.php';
 if(isset($_GET['id'])){
     $id = $_GET['id'];
@@ -79,24 +78,23 @@ $_SESSION['previouspage'] = $_SERVER['REQUEST_URI'];
         </div>
         <div class = "col-md-9" id = "info-product">
             <ul class="list-group">
-            <li class="list-group-item">Supplier: <?php echo $sup;?></li>
+            <li class="list-group-item"><strong>Supplier: </strong><?php echo $sup;?></li>
             <li class="list-group-item">
                 <table>
                     <?php 
                     foreach ($scr as $key => $value) {
                         echo "<tr>";
                         foreach ($value as $nkey => $nvalue) {
-                            echo "<th>".$nkey."</th>";
-                            echo "<td>\t</td>";
-                            echo "<td>".$nvalue."</td>";
+                            echo "<th width=50% style='border-bottom: 1px dotted #b6c0c4;'>".$nkey."</th>";
+                            echo "<td style='border-bottom: 1px dotted #b6c0c4;text-align:left'>".$nvalue."</td>";
                         }
                         echo "</tr>";
                     }
-                ?>
+                    ?>
                 </table>
             </li>
-            <li class="list-group-item">Storage: <?php echo $storage;?></li>
-            <li class="list-group-item">Price: <strong> $ <?php echo $price;?></strong></li>
+            <li class="list-group-item"><strong>Storage: </strong><?php echo $storage;?></li>
+            <li class="list-group-item"><strong>Price: $ <?php echo $price;?></strong></li>
             </ul>
             <span>
             <input id="quantity" idproduct=<?=$id?> type="number" value=1 min=1>

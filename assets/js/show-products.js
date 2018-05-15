@@ -10,7 +10,9 @@ function load_samsung(){
             cmd1 += '<div class="product-box">'+
                             '<img class="resize" src="'+samsung[i].img+'">'+
                             '<div class="caption">'+
-                                '<h4><a href="#">'+samsung[i].proName+'</a></h4>'+
+                                '<h4><a href="view/view-detail.php'+
+                                '?id='+samsung[i].proId+
+                                '">'+samsung[i].proName+'</a></h4>'+
                                 '<p>Price: <strong> $'+samsung[i].price+'</strong></p>'+
                             '</div>'+
                             '<div class="tool-div"><span>'+
@@ -42,7 +44,9 @@ function load_apple(){
             cmd +=  '<div class="product-box">'+
                             '<img class="resize" src="'+apple[i].img+'">'+
                             '<div class="caption">'+
-                                '<h4><a href="#">'+apple[i].proName+'</a></h4>'+
+                                '<h4><a href="view/view-detail.php'+
+                                '?id='+apple[i].proId+
+                                '">'+apple[i].proName+'</a></h4>'+
                                 '<p>Price: <strong> $'+apple[i].price+'</strong></p>'+
                             '</div>'+
                             '<div class = "tool-div"> <span><a class="btn btn-success atc" id="" '+
@@ -73,7 +77,9 @@ function load_other(){
             cmd2 +=  '<div class="product-box">'+
                             '<img class="resize" src="'+other[i].img+'">'+
                             '<div class="caption">'+
-                                '<h4><a href="#">'+other[i].proName+'</a></h4>'+
+                                '<h4><a href="view/view-detail.php'+
+                                '?id='+other[i].proId+
+                                '">'+other[i].proName+'</a></h4>'+
                                 '<p>Price: <strong> $'+other[i].price+'</strong></p>'+
                             '</div>'+
                             '<div class = "tool-div"> <span><a class="btn btn-success atc" id="" '+

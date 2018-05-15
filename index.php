@@ -30,16 +30,16 @@ session_start();
                 <a class="list-group-item active"><b>Apple</b></a>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="#">IPhone 5 series</a>
+                        <a id="iPhone5">IPhone 5 series</a>
                     </li>
                     <li class="list-group-item">
-                            <a href="#">IPhone 6 series</a>
+                        <a id="iPhone6">IPhone 6 series</a>
                     </li>
                     <li class="list-group-item">
-                            <a href="#">IPhone 7 series</a>
+                        <a id="iPhone7">IPhone 7 series</a>
                     </li>
                     <li class="list-group-item">
-                            <a href="#">IPhone X series</a>
+                        <a id="iPhoneX">IPhone X series</a>
                     </li>
                 </ul>
             </div>
@@ -124,5 +124,6 @@ session_start();
 <script type="text/javascript" src="assets/js/signup.js"></script>
 <script type="text/javascript" src="assets/js/show-products.js"></script>
 <script type="text/javascript" src="assets/js/search.js"></script>
+<script type="text/javascript" src="assets/js/left-list-click.js"></script>
 </body>
 </html>

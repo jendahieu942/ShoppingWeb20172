@@ -23,24 +23,23 @@ if(isset($_SESSION['userName'])):
     <div class="row" >
         <div class="col-sm-6 col-md-6">
             <h3><center>List product in your cart</center></h3>
-            <table class="table table-hover" style="size: 1000px">
+            <table class="table table-hover" style="size: 1000px" id="cart-table">
                 <tr>
                     <th>#</th>
                     <th>Product image</th>
                     <th>Product name</th>
-                    <th>Unit Price</th>
+                    <th>Unit Price($)</th>
                     <th>Quantity</th>
-                    <th>Amount</th>
-                    <th>Modify</th>
+                    <th>Amount($)</th>
                 </tr>
-                <div id="resultcart"></div>
-            </tabel>
+            </table>
         </div>
     </div>
 </div>
 <!-- Javascript file-->
 <script src="/ShoppingWeb20172/assets/js/logout.js"></script>
 <script src="/ShoppingWeb20172/assets/js/show-products.js"></script>
+<script src="/ShoppingWeb20172/assets/js/show-cart.js"></script>
 </body>
 </html>
 <?php
