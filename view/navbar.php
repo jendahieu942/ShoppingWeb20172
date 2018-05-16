@@ -26,7 +26,7 @@
                                     <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                     <li><a href="/ShoppingWeb20172/view/userProfile.php">Profile</a></li>
-                                    <li><a href="#">Purchased</a></li>
+                                    <li><a href="/ShoppingWeb20172/view/showPurchased.php">Purchased</a></li>
                                     <li class="divider"></li>
                                     <li id="logout"><a><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
                                     </ul>
