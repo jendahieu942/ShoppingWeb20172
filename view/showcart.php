@@ -1,7 +1,33 @@
 <?php
+    if(isset($_GET["id"]) && isset($_GET["quantity"])){
+        if(($_GET['quantity']>0)){
+            // số nguyên hoặc số thập phân (làm tròn thành nguyên) > 0
+            $conn = mysqli_connect('localhost','root','12345','shoppingweb');
+            if(!$conn){
+                die("Database connection failed!");
+            }
+            $sql = "UPDATE cart SET cart.quantity = ".$_GET['quantity']." WHERE cart.cartId= ".$_GET['cartId'];
+            $result = mysqli_query($conn, $sql);
+            mysqli_close($conn);
+        } else{
+            // trường hợp nhập vào không phải số, hoăc số <=o
+        }
+    }
+
+    if(isset($_GET['action'])){
+        $conn = mysqli_connect('localhost','root','12345','shoppingweb');
+        if(!$conn){
+            die("Database connection failed!");
+        }
+        $sql = "DELETE from cart WHERE cart.cartId =".$_GET['cartId'];
+        $result = mysqli_query($conn, $sql);
+        mysqli_close($conn);
+    }
+    ?>
+<?php
 session_start();
 if(isset($_SESSION['userName'])):
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +54,7 @@ if(isset($_SESSION['userName'])):
     include 'navbar.php';
 ?>
 <!-- Main view-->
-<div class="col-md-9" style="width: 200%">
+<div class="col-md-9" style="width: 220%">
     <div class="row" >
         <div class="col-sm-6 col-md-6">
             <h3><center>List product in your cart</center></h3>

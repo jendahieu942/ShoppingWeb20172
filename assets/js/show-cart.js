@@ -16,7 +16,14 @@ $(document).ready(function load_cart() {
                         "<h4 style='color: #2ab27b'>"+ data[index].proName + "</h4>" +
                     "</td>"+
                     "<td>$"+ data[index].price + "</td>"+
-                    "<td>"+ data[index].quantity+ "</td>"+
+                    "<td>" +
+                        "<input type='text' name='quantity_"+index+"' id='quantity_"+index+"' value='"+data[index].quantity+"'>" +
+                        "<div>" +
+                            "<a href = 'javascript:void(0)' onclick='updateItem("+index+","+data[index].cartId+")' style='color: #156beb'>update </a>" +
+                            "<a href = 'javascript:void(0)' onclick='deleteItem("+index+","+data[index].cartId+")' style='color: red'> delete</a>" +
+                        "</div>"+
+                    "</td>"+
+                    // "<td>"+ data[index].quantity+ "</td>"+
                     "<td>$"+ parseInt(data[index].price * data[index].quantity) + "</td>"+
                     "</tr>";
                 total += parseInt(data[index].price * data[index].quantity);
@@ -30,3 +37,17 @@ $(document).ready(function load_cart() {
         }
     });
 })
+function updateItem(id, cartId) {
+    quantity = $("#quantity_"+id).val();
+    $.get("showcart.php",{"id":id,"cartId":cartId,"quantity":quantity}, function(data){
+        location.reload();
+    });
+    // location.reload();
+    // alert(quantity);
+}
+function deleteItem(id, cartId) {
+    del = "delete";
+    $.get("showcart.php",{"id":id,"cartId":cartId,"action":del}, function(data){
+        location.reload();
+    });
+}
