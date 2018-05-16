@@ -12,8 +12,8 @@ $(document).ready(function load_cart() {
                     "<td>"+ parseInt(index+1) +"</td>"+
                     // "<td>"+ data[index].img +"</td>"+
                     "<td>" +
-                    "<img src='../" + data[index].img +"' alt= '" + data[index].img + "' style='width:128px;height:128px;'>" +
-                    "<h4 style='color: #2ab27b'>"+ data[index].proName + "</h4>" +
+                        "<img src='../" + data[index].img +"' alt= '" + data[index].img + "' style='width:128px;height:128px;'>" +
+                        "<h4 style='color: #2ab27b'>"+ data[index].proName + "</h4>" +
                     "</td>"+
                     "<td>$"+ data[index].price + "</td>"+
                     "<td>"+ data[index].quantity+ "</td>"+

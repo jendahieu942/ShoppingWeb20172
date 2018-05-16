@@ -36,7 +36,6 @@ if(isset($_SESSION['userName'])):
                 <tr>
                     <th>#</th>
                     <th>Product image</th>
-                    <th>Product name</th>
                     <th>Unit Price($)</th>
                     <th>Quantity</th>
                     <th>Amount($)</th>
