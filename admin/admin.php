@@ -10,7 +10,7 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		#cover{
-			height: 950px;
+			height: 1050px;
 			width: 1200px;
 			background-color: #99ff99;
 			margin-right: auto;
@@ -41,6 +41,46 @@
 			width:100px;
 		}
 	</style>
+	<script type="text/javascript">
+		function search_pro($str){
+			var xmlhttp;
+		if (window.XMLHttpRequest)
+                {
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else
+                {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("view").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "../assets/process/execute.php?q=" + $str, true);
+        xmlhttp.send();
+		}
+	</script>
+	<script type="text/javascript">
+			function search_bill($str){
+				var xmlhttp;
+		if (window.XMLHttpRequest)
+                {
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else
+                {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("view").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "../assets/process/execute_search.php?q=" + $str, true);
+        xmlhttp.send();
+			}
+		</script>
 </head>
 <body>
 <div class = container>
@@ -50,7 +90,12 @@
 	<div class= 'row'>
 		<div class="col-md-3">
 			<form action="admin.php" method="post" class='form-group'>
+<<<<<<< HEAD
 				<h3>PRODUCT LIST</h3>
+=======
+				<h3>VIEW PRODUCT</h3>
+				<input type="text" onkeyup="search_pro(this.value)" placeholder="search product" class="form-control">
+>>>>>>> refs/remotes/origin/master
 				<input type="submit" name="Apple" value="APPLE" class='form-control'><br>
 				<input type="submit" name="Huawei" value="HUAWEI" class='form-control'><br>
 				<input type="submit" name="OPPO" value="OPPO" class='form-control'><br>
@@ -60,6 +105,7 @@
 				<h3>ADD PRODUCT</h3>
 				<input type="submit" name="insert_product" value="ADD PRODUCT" class='form-control'><br>
 				<h3>VIEW BILL</h3>
+				<input type="text" onkeyup="search_bill(this.value)" placeholder="dd-mm-20xx">
 				<input type="submit" name="ngay" value="TODAY" class='form-control'><br>
 				<input type="submit" name="thang" value="THIS MONTH" class='form-control'><br>
 				<input type="submit" name="nam" value="THIS YEAR" class='form-control'><br>
@@ -72,7 +118,7 @@
 				include "../assets/process/view_admin.php";
 			?>
 		</div>
-		<script src="admin.js"></script>
+		
 	</div>
 </div>
 </body>
