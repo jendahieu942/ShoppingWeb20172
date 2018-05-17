@@ -22,7 +22,7 @@
 							$id=$row1['proId'];
 							$name=$row1['proName'];
 							$supplier=$row1['supplier'];
-							$des=$row1['srcSolution'];
+							$des=$row1['scrSolution'];
 							$price=$row1['price'];
 							$quantity=$row1['quantity'];
 							echo "<tr><td>$name</td><td>$supplier</td><td>$des</td><td>$price</td><td>$quantity</td><td><form action='admin.php' method='post' class='form-group'><input type='text' name='new_price_$id' value='$price' placeholder='new price' class='form-control' style='width:100px'>

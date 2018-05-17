@@ -30,10 +30,6 @@
 			font-size: 25px;
 			background-color: #ffb84d;
 		}
-		#yeucau{
-			width: 300px;
-			display: inline-flex;
-		}
 		#view{
 			width: 850px;
 			height: 800px;
@@ -47,11 +43,14 @@
 	</style>
 </head>
 <body>
-	<div id="cover">
-		<h1>ADMIN PAGE</h1>
-		<div id="yeucau">
+<div class = container>
+	<div class= 'row'>
+		<center><h1 style="background-color: #1bf0cc">MANAGEMENT PAGE</h1></center>
+	</div>
+	<div class= 'row'>
+		<div class="col-md-3">
 			<form action="admin.php" method="post" class='form-group'>
-				<h3>VIEW PRODUCT</h3>
+				<h3>PRODUCT LIST</h3>
 				<input type="submit" name="Apple" value="APPLE" class='form-control'><br>
 				<input type="submit" name="Huawei" value="HUAWEI" class='form-control'><br>
 				<input type="submit" name="OPPO" value="OPPO" class='form-control'><br>
@@ -67,7 +66,7 @@
 				<input type="submit" name="all" value="ALL" class='form-control'><br>
 			</form>
 		</div>
-		<div id="view">
+		<div class = "col-md-9">
 			<br>
 			<?php
 				include "../assets/process/view_admin.php";
@@ -75,5 +74,6 @@
 		</div>
 		<script src="admin.js"></script>
 	</div>
+</div>
 </body>
 </html>

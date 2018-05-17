@@ -65,7 +65,7 @@ ADD PRODUCT HERE:
 <input type="text" name="scrSolution" placeholder="Screen Solution"></td>
 </tr>
 <tr><td>Storage:</td>
-<td><input type="text" name="storage" placeholder="Storage Device"></td>
+<td><input type="text-field" name="storage" placeholder="Storage Device"></td>
 </tr>
 <tr><td>Price:</td>
 <td><input type="number" name="price" placeholder="$"></td>

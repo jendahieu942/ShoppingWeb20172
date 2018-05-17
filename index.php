@@ -155,6 +155,9 @@ session_start();
     </div>
 </div>
 <!--Main view end-->
+<?php
+include_once 'view/footer.html';
+?>
 <!-- Javascript file-->
 <script type="text/javascript" src="assets/js/logout.js"></script>
 <script type="text/javascript" src="assets/js/signup.js"></script>
